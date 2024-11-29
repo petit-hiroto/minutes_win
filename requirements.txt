@@ -1,0 +1,6 @@
+google-generativeai
+openpyxl
+argparse
+python-dotenv
+google-api-core
+python-docx
