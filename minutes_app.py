@@ -316,7 +316,7 @@ def transcribe_audio_with_key(audio_file, api_key, retries=3):
         # リトライが可能な場合は、次の試行を行います
         if attempt < retries - 1:
             logging.info(f"リトライを試みます ({attempt + 2}/{retries})")
-            time.sleep(60)  # 1分待ってから次の試行を行います
+            time.sleep(30)  # 1分待ってから次の試行を行います
         else:
             # すべての試行が失敗した場合、最終的なエラーを記録します
             logging.error(f"{audio_file}の文字起こしが{retries}回失敗しました。")
@@ -530,8 +530,8 @@ def process_audio_file(audio_file_path, processed_files):
             logging.error(f"文字起こし結果のWordファイル保存中にエラーが発生しました: {str(e)}")
             return False
 
-        # 70秒のバッファを持たせる
-        time.sleep(70)
+        # 15秒のバッファを持たせる
+        time.sleep(15)
 
         # 成功したAPIキー使って情報抽出を試みる
         for api_key in successful_api_keys:
@@ -1035,11 +1035,11 @@ def complete_audio_upload():
 
         # 想定処理時間を計算
         if file_size_mb <= 10:
-            estimated_time = "1〜2分"
+            estimated_time = "0~1分"
         elif file_size_mb <= 20:
-            estimated_time = "2〜3分"
+            estimated_time = "1〜2分"
         else:
-            estimated_time = "3〜5分"
+            estimated_time = "1〜2分"
 
         estimated_time_text = estimated_time  # 時間だけを保存
         estimated_time_label.config(text=f"想定処理時間：{estimated_time}")  # 表示時にテキストを追加
@@ -1062,11 +1062,11 @@ def upload_audio_file():
         
         # 想定処理時間を計算
         if file_size_mb <= 10:
-            estimated_time = "1〜2分"
+            estimated_time = "0〜1分"
         elif file_size_mb <= 20:
-            estimated_time = "2〜3分"
+            estimated_time = "1〜2分"
         else:
-            estimated_time = "3〜5分"
+            estimated_time = "1〜2分"
         
         # 想定処理時間を表示（「想定処理時間：」を含める）
         estimated_time_text = estimated_time  # 時間だけを保存
