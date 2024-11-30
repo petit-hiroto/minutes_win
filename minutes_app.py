@@ -1035,11 +1035,11 @@ def complete_audio_upload():
 
         # 想定処理時間を計算
         if file_size_mb <= 10:
-            estimated_time = "0~1分"
+            estimated_time = "2～3分"
         elif file_size_mb <= 20:
-            estimated_time = "1〜2分"
+            estimated_time = "3～4分"
         else:
-            estimated_time = "1〜2分"
+            estimated_time = "4〜4分"
 
         estimated_time_text = estimated_time  # 時間だけを保存
         estimated_time_label.config(text=f"想定処理時間：{estimated_time}")  # 表示時にテキストを追加
@@ -1062,11 +1062,11 @@ def upload_audio_file():
         
         # 想定処理時間を計算
         if file_size_mb <= 10:
-            estimated_time = "0〜1分"
+            estimated_time = "2〜3分"
         elif file_size_mb <= 20:
-            estimated_time = "1〜2分"
+            estimated_time = "3〜4分"
         else:
-            estimated_time = "1〜2分"
+            estimated_time = "3〜4分"
         
         # 想定処理時間を表示（「想定処理時間：」を含める）
         estimated_time_text = estimated_time  # 時間だけを保存
